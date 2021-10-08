@@ -2,29 +2,39 @@
 
 namespace EmpWage1
 {
-    class switchcase
+    class Program
     {
         static void Main(string[] args)
         {
+            int empRatePerHr = 20;
             int FullTimeHr = 8;
-            int PartTimeHr = 4;
-            int emprateperHr = 20;
-            int check = new Random().Next(2);
-            switch (check)
+            int ParttimeHr = 4;
+            int totalSalary = 0;
+            int WorkingDays = 20;
+            int salary;
+
+            for (int day = 1; day <= WorkingDays; day++)
             {
-                case 0:
-                    Console.WriteLine($"Part Time Salary is : {emprateperHr * PartTimeHr}");
-                    break;
-                case 1:
-                    Console.WriteLine($"Full Time Salary is : {emprateperHr * FullTimeHr}");
-                    break;
+                int rand = new Random().Next(3);
+                if (rand == 0)
+                {
+                    Console.WriteLine("is full time");
+                    salary = FullTimeHr * empRatePerHr;
+                }
+                else if (rand == 1)
+                {
+                    Console.WriteLine("is Part time");
+                    salary = ParttimeHr * empRatePerHr;
+                }
+                else
+                {
+                    salary = 0;
+                }
+                Console.WriteLine($"Total Salary : {salary}");
             }
-
-
-
         }
+
     }
 }
-
 
 
