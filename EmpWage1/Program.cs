@@ -1,40 +1,47 @@
 ﻿using System;
 
-namespace EmpWage1
+namespace EmployeeWage
 {
-    class Program
+    class switchcase
     {
         static void Main(string[] args)
         {
-            int empRatePerHr = 20;
-            int FullTimeHr = 8;
-            int ParttimeHr = 4;
-            int totalSalary = 0;
-            int WorkingDays = 20;
+            int PER_HOUR = 20;
+            int FULL_TIME = 8;
+            int PART_TIME = 4;
             int salary;
-
-            for (int day = 1; day <= WorkingDays; day++)
+            int totalSalary = 0;
+            int WORKING_DAYS = 20;
+            int WORKING_HRS = 100;
+            int workDays = 0;
+            int workHrs = 0;
+            while (workDays < WORKING_DAYS && workHrs <= WORKING_HRS)
             {
+                workDays++;
                 int rand = new Random().Next(3);
                 if (rand == 0)
                 {
-                    Console.WriteLine("is full time");
-                    salary = FullTimeHr * empRatePerHr;
+                    salary = FULL_TIME * PER_HOUR;
+                    workHrs = workHrs + FULL_TIME;
+                    totalSalary = totalSalary + salary;
                 }
                 else if (rand == 1)
                 {
-                    Console.WriteLine("is Part time");
-                    salary = ParttimeHr * empRatePerHr;
+                    salary = PART_TIME * PER_HOUR;
+                    workHrs = workHrs + PART_TIME;
+                    totalSalary = totalSalary + salary;
                 }
                 else
                 {
                     salary = 0;
                 }
-                Console.WriteLine($"Total Salary : {salary}");
             }
+            Console.WriteLine($"Total Salary : {totalSalary}");
+            Console.WriteLine($"Total Days : {workDays}");
+            Console.WriteLine($"Total Hours : {workHrs}");
+
         }
 
     }
+
 }
-
-
