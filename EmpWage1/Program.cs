@@ -4,10 +4,12 @@ namespace EmpWage1
 {
     class Program
     {
-        static void Main(string[] args)
+        static int Main(string[] args)
         {
             int isPresent = 1;
 
+            int emprateperHr = 20;
+            int empHr = 8;
             Random random = new Random();
 
             int check = random.Next(0, 2);
@@ -15,13 +17,16 @@ namespace EmpWage1
             if (check == isPresent)
             {
                 Console.WriteLine("is present");
+                int salary;
+                return salary = (emprateperHr * empHr);
             }
             else
             {
-                Console.WriteLine("is absent");
-            }
+                int salary;
+                return salary = 0;
             }
         }
     }
+}
 
 
