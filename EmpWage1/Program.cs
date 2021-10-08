@@ -6,25 +6,37 @@ namespace EmpWage1
     {
         static int Main(string[] args)
         {
-            int isPresent = 1;
-
+            int isPartTime = 1;
+            int isFullTime = 2;
             int emprateperHr = 20;
-            int empHr = 8;
             Random random = new Random();
 
-            int check = random.Next(0, 2);
+            int check = random.Next(0, 3);
 
-            if (check == isPresent)
+            if (check == isPartTime)
             {
-                Console.WriteLine("is present");
+                Console.WriteLine("is part time");
+                int empHr = 4;
                 int salary;
                 return salary = (emprateperHr * empHr);
+
+            }
+            else if (check == isFullTime)
+            {
+                Console.WriteLine("is full time");
+                int empHr = 8;
+                int salary;
+                return salary = (emprateperHr * empHr);
+
             }
             else
             {
-                int salary;
-                return salary = 0;
+                int emprHr;
+                return emprHr = 0;
+
             }
+
+
         }
     }
 }
